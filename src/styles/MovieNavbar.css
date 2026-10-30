@@ -1,0 +1,72 @@
+.movie-navbar {
+  width: 100%;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 7%;
+
+  background: #000;
+
+  border-bottom: 1px solid #222;
+
+  gap: 32px;
+}
+
+.movie-option {
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+
+  color: #aaa;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  position: relative;
+
+  transition: 0.3s ease;
+}
+
+.movie-option:hover {
+  color: white;
+}
+
+/* Hover line */
+.movie-option::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  width: 0;
+  height: 3px;
+
+  background: #e50914;
+
+  border-radius: 3px 3px 0 0;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+/* Show line on hover */
+.movie-option:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.movie-option.active {
+  color: white;
+}
+
+/* Active line */
+.movie-option.active::after {
+  width: 100%;
+}

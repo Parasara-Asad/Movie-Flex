@@ -1,0 +1,45 @@
+@import "./popular.css";
+
+/* Additional styling for Movie sections */
+.popular-container {
+  padding-top: 10px;
+}
+
+/* 
+   Remove Movie folder card overlay effect so it matches 
+   the exact same hover effect as the Popular movie cards
+*/
+.movie-overlay,
+.movie-card:hover .movie-overlay,
+.movie-overlay span,
+.movie-card:hover .movie-overlay span {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Ensure the Movie card hover matches Popular movie cards identically */
+.movie-card {
+  transition: transform 0.4s var(--ease-spring),
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .movie-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--card-border-hover);
+    box-shadow: var(--shadow-hover);
+    z-index: 5;
+  }
+
+  .movie-card:hover .movie-image {
+    transform: scale(1.08);
+    filter: brightness(0.7);
+  }
+
+  .movie-card:hover .movie-body {
+    background: var(--card-bg-hover);
+  }
+}
